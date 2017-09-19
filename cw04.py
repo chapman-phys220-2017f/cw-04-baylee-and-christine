@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 
 ###
-# Name: YOUR_FULL_NAME_HERE
-# Student ID: ID_HERE
+# Name: Christine Outlaw
+# Student ID: 1912737
 # Email: CHAPMAN_EMAIL_HERE
 # Course: PHYS220/MATH220/CPSC220 Fall 2017
 # Assignment: HOMEWORK_OR_CLASSWORK_NUMBER
@@ -58,7 +58,11 @@ def gen_gaussian_array(a, b, n=1000):
             x  : [a, ..., b] Array of n equally spaced float64 between a and b
             g  : [g(a), ..., g(b)] Array of Gaussian values matched to x
     """
-    pass
+    x = np.linspace(a,b,n)
+    def gauss(x):
+        return (1/np.sqrt(2*np.pi))*np.exp(-x**2/2)
+    g = [gauss(x)]
+    return (x,g)
 
 
 def main(a,b,n=1000):
