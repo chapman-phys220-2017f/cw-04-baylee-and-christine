@@ -64,6 +64,40 @@ def gen_gaussian_array(a, b, n=1000):
     g = [gauss(x)]
     return (x,g)
 
+def gen_sinc_list(a, b, n=1000):
+    """gen_sinc_list(a, b, n=1000)
+    Generate a discrete approximation of a sinc function, including its
+    domain and range, stored as a pair of vanilla python lists.
+    
+    Args:
+        a (float) : Lower bound of domain
+        b (float) : Upper bound of domain
+        n (int, optional) : Number of points in domain, defaults to 1000.
+    
+    Returns:
+        (x, s) : Pair of lists of floats
+            x  : [a, ..., b] List of n equally spaced floats between a and b
+            s  : [s(a), ..., s(b)] List of sinc values matched to x
+    """
+    dx = (b-a)/(n-1)                         # space between points
+    x = [a + k*dx for k in range(n)]         # domain list
+    
+    # implementation of a sinc function
+    def sinc(x):
+        return (math.sin(x)/x)
+    
+    s = [sinc(xk) for xk in x]                 
+    return (x, s)
+
+
+
+
+
+
+
+
+
+
 
 def main(a,b,n=1000):
     """main(a, b, n=1000)
