@@ -62,7 +62,7 @@ def gen_gaussian_array(a, b, n=1000):
     x = np.linspace(a,b,n)
     def gauss(x):
         return (1/np.sqrt(2*np.pi))*np.exp(-x**2/2)
-    g = [gauss(x)]
+    g = gauss(x)
     return (x,g)
 
 def gen_sinc_list(a, b, n=1000):
@@ -85,8 +85,12 @@ def gen_sinc_list(a, b, n=1000):
     
     # implementation of a sinc function
     def sinc(x):
-        return (math.sin(x)/x)
-    
+        # asymptote
+        if x == 0:
+            return 1
+        else:
+            return (math.sin(x)/x)
+
     s = [sinc(xk) for xk in x]                 
     return (x, s)
 
@@ -101,14 +105,17 @@ def gen_sinc_array(a, b, n=1000):
         n (int, optional) : Number of points in domain, defaults to 1000.
     
     Returns:
-        (x, g) : Pair of numpy arrays of float64
+        (x, s) : Pair of numpy arrays of float64
             x  : [a, ..., b] Array of n equally spaced float64 between a and b
-            g  : [g(a), ..., g(b)] Array of Gaussian values matched to x
+            s  : [s(a), ..., s(b)] Array of sinc values matched to x
     """
+    
+    
+    
     x = np.linspace(a,b,n)
     def sinc(x):
         return (np.sin(x)/x)
-    s = [sinc(x)]
+    s = sinc(x)
     return (x,s)
 
 def gen_sinf_list(a, b, n=1000):
@@ -152,12 +159,12 @@ def gen_sinf_array(a, b, n=1000):
     Returns:
         (x, g) : Pair of numpy arrays of float64
             x  : [a, ..., b] Array of n equally spaced float64 between a and b
-            g  : [g(a), ..., g(b)] Array of Gaussian values matched to x
+            f  : [f(a), ..., f(b)] Array of sinf values matched to x
     """
     x = np.linspace(a,b,n)
     def sinf(x):
         return (np.sin(1/x))
-    f = [sinf(x)]
+    f = sinf(x)
     return (x, f)
 
 
