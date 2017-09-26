@@ -89,7 +89,26 @@ def gen_sinc_list(a, b, n=1000):
     s = [sinc(xk) for xk in x]                 
     return (x, s)
 
-
+def gen_sinc_array(a, b, n=1000):
+    """gen_sinc_array(a, b, n=1000)
+    Generate a discrete approximation of a Sinc function, including its
+    domain and range, stored as a pair of numpy arrays.
+    
+    Args:
+        a (float) : Lower bound of domain
+        b (float) : Upper bound of domain
+        n (int, optional) : Number of points in domain, defaults to 1000.
+    
+    Returns:
+        (x, g) : Pair of numpy arrays of float64
+            x  : [a, ..., b] Array of n equally spaced float64 between a and b
+            g  : [g(a), ..., g(b)] Array of Gaussian values matched to x
+    """
+    x = np.linspace(a,b,n)
+    def sinc(x):
+        return (np.sin(x)/x)
+    s = [sinc(x)]
+    return (x,s)
 
 
 
