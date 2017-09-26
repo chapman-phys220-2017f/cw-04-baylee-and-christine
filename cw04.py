@@ -110,6 +110,30 @@ def gen_sinc_array(a, b, n=1000):
     s = [sinc(x)]
     return (x,s)
 
+def gen_sinf_list(a, b, n=1000):
+    """gen_sinf_list(a, b, n=1000)
+    Generate a discrete approximation of a sinf function, including its
+    domain and range, stored as a pair of vanilla python lists.
+    
+    Args:
+        a (float) : Lower bound of domain
+        b (float) : Upper bound of domain
+        n (int, optional) : Number of points in domain, defaults to 1000.
+    
+    Returns:
+        (x, sf) : Pair of lists of floats
+            x  : [a, ..., b] List of n equally spaced floats between a and b
+            sf  : [sf(a), ..., sf(b)] List of sinf values matched to x
+    """
+    dx = (b-a)/(n-1)                         # spacing between points
+    x = [a + k*dx for k in range(n)]         # domain list
+    
+    #List implementations of a frequency-chirped sine
+    def sinf(x):
+        return (math.sin(1/x))
+    
+    sf = [sinf(xk) for xk in x]                  
+    return (x, sf)
 
 
 
