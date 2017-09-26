@@ -113,13 +113,13 @@ def gen_sinc_array(a, b, n=1000):
     
     
     x = np.linspace(a,b,n)
+    
     def sinc(x):
-        if np.where(x<0):
-            return (np.sin(x)/x)
-        elif np.where(x>0):
+        if x!=0:
             return (np.sin(x)/x)
         else:
-            return 
+            return 1
+        
     s = sinc(x)
     return (x,s)
 
