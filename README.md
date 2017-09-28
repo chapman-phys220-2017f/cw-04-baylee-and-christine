@@ -1,6 +1,6 @@
 # PHYS220 CW 4
 
-**Author(s):** **CHANGEME**
+**Author(s):** Christine Outlaw, Baylee Mumma
 
 [![Build Status](https://travis-ci.org/chapman-phys220-2017f/cw-04-baylee-and-christine.svg?branch=master)](https://travis-ci.org/chapman-phys220-2017f/cw-04-baylee-and-christine)
 
@@ -19,7 +19,7 @@ Pro-tip: using git to manage conflicts on Jupyter notebooks is a pain. I recomme
 
 Analyze in this section what you found useful about this assignment in your own words. Include any lingering questions or comments that you may have.
 
-**CHANGEME**
+Using pandas and numpy wasn't that difficult in the notebook and seeing how much more efficient numpy arrays are compared to standard python lists was useful for the future.
 
 ## Honor Pledge
 
@@ -30,4 +30,4 @@ I pledge that all the work in this repository is my own with only the following 
 
 Signed,
 
-**YOURNAME**
+Christine Outlaw, Baylee Mumma
