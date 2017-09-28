@@ -49,7 +49,7 @@ def test_sinc_list():
     using the reference list implementation.
     """
     x,s = cw04.gen_sinc_list(-1,1,3)
-    desired = [0.017452406437284, 1, 0.017452406437284]
+    desired = [0.8414709848078965, 1, 0.8414709848078965]
     print("Obtained:",s)
     print("Desired:",desired)
     # For comparing floating point values, nose has useful helper functions
@@ -62,7 +62,7 @@ def test_sinc_array():
     using the numpy array implementation.
     """
     x,s = cw04.gen_sinc_array(-1,1,3)
-    desired = np.array([0.017452406437284, 1, 0.017452406437284])
+    desired = np.array([0.8414709848078965, 1, 0.8414709848078965])
     print("Obtained:",s)
     print("Desired:",desired)
     # Numpy has built-in testing functions to iterate over arrays and compare
@@ -75,7 +75,7 @@ def test_sinf_list():
     using the reference list implementation.
     """
     x,f = cw04.gen_sinf_list(-1,1,3)
-    desired = [0.017452406437284, 1, 0.017452406437284]
+    desired = [0.8414709848078965, 1, 0.8414709848078965]
     print("Obtained:",f)
     print("Desired:",desired)
     # For comparing floating point values, nose has useful helper functions
@@ -88,7 +88,7 @@ def test_sinf_array():
     using the numpy array implementation.
     """
     x,f = cw04.gen_sinf_array(-1,1,3)
-    desired = np.array([0.017452406437284, 1, 0.017452406437284])
+    desired = np.array([0.8414709848078965, 1, 0.8414709848078965])
     print("Obtained:",f)
     print("Desired:",desired)
     # Numpy has built-in testing functions to iterate over arrays and compare
