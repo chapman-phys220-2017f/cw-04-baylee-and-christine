@@ -42,3 +42,55 @@ def test_gauss_array():
     # Numpy has built-in testing functions to iterate over arrays and compare
     # values up to certain tolerances
     np.testing.assert_almost_equal(g, desired)
+
+def test_sinc_list():
+    """test_sinc_list()
+    Tests whether sinc values are correct for domain points -1, 0, and 1,
+    using the reference list implementation.
+    """
+    x,s = cw04.gen_sinc_list(-1,1,3)
+    desired = [0.017452406437284, 1, 0.017452406437284]
+    print("Obtained:",s)
+    print("Desired:",desired)
+    # For comparing floating point values, nose has useful helper functions
+    # to ensure they are equal up to a numerical precision tolerance
+    nose.tools.assert_almost_equal(s, desired)
+
+def test_sinc_array():
+    """test_gauss_array()
+    Tests whether sinc values are correct for domain points -1, 0, and 1,
+    using the numpy array implementation.
+    """
+    x,s = cw04.gen_sinc_array(-1,1,3)
+    desired = np.array([0.017452406437284, 1, 0.017452406437284])
+    print("Obtained:",s)
+    print("Desired:",desired)
+    # Numpy has built-in testing functions to iterate over arrays and compare
+    # values up to certain tolerances
+    np.testing.assert_almost_equal(s, desired)
+    
+def test_sinf_list():
+    """test_sinc_list()
+    Tests whether sin frequency chirpped values are correct for domain points -1, 0, and 1,
+    using the reference list implementation.
+    """
+    x,f = cw04.gen_sinf_list(-1,1,3)
+    desired = [0.017452406437284, 1, 0.017452406437284]
+    print("Obtained:",f)
+    print("Desired:",desired)
+    # For comparing floating point values, nose has useful helper functions
+    # to ensure they are equal up to a numerical precision tolerance
+    nose.tools.assert_almost_equal(f, desired)
+
+def test_sinf_array():
+    """test_gauss_array()
+    Tests whether sin frequency chirpped values are correct for domain points -1, 0, and 1,
+    using the numpy array implementation.
+    """
+    x,f = cw04.gen_sinf_array(-1,1,3)
+    desired = np.array([0.017452406437284, 1, 0.017452406437284])
+    print("Obtained:",f)
+    print("Desired:",desired)
+    # Numpy has built-in testing functions to iterate over arrays and compare
+    # values up to certain tolerances
+    np.testing.assert_almost_equal(f, desired)

@@ -85,7 +85,6 @@ def gen_sinc_list(a, b, n=1000):
     
     # implementation of a sinc function
     def sinc(x):
-        # asymptote
         if x == 0:
             return 1
         else:
@@ -115,12 +114,12 @@ def gen_sinc_array(a, b, n=1000):
     x = np.linspace(a,b,n)
     
     def sinc(x):
-        if x!=0:
-            return (np.sin(x)/x)
-        else:
+        if x==0:
             return 1
+        else:
+            return (np.sin(x)/x)
         
-    s = sinc(x)
+    s = np.vectorize(sinc(x))
     return (x,s)
 
 def gen_sinf_list(a, b, n=1000):
@@ -143,10 +142,13 @@ def gen_sinf_list(a, b, n=1000):
     
     #List implementations of a frequency-chirped sine
     def sinf(x):
-        return (math.sin(1/x))
+        if x == 0:
+            return 1
+        else:
+            return (math.sin(1/x))
     
-    sf = [sinf(xk) for xk in x]                  
-    return (x, sf)
+    f = [sinf(xk) for xk in x]                  
+    return (x, f)
 
 
 
@@ -168,8 +170,11 @@ def gen_sinf_array(a, b, n=1000):
     """
     x = np.linspace(a,b,n)
     def sinf(x):
-        return (np.sin(1/x))
-    f = sinf(x)
+        if x == 0:
+            return 1
+        else:
+            return (np.sin(1/x))
+    f = np.vectorize(sinf(x))
     return (x, f)
 
 
