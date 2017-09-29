@@ -7,6 +7,12 @@
 # Email: CHAPMAN_EMAIL_HERE
 # Course: PHYS220/MATH220/CPSC220 Fall 2017
 # Assignment: HOMEWORK_OR_CLASSWORK_NUMBER
+
+# Name: Baylee Mumma
+# Student ID: 2274844
+# Email: mumma103@mail.chapman.edu
+# Course: PHYS220/MATH220/CPSC220 Fall 2017
+# Assignment: CW4
 ###
 
 """Classwork 04
