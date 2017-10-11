@@ -20,7 +20,7 @@ This classwork introduces numpy arrays and compares their performance to
 python lists.
 """
 
-import math
+import math                                ### Don't use math if you are using numpy
 import numpy as np
 import pandas as pd
 
@@ -125,7 +125,7 @@ def gen_sinc_array(a, b, n=1000):
         else:
             return (np.sin(x)/x)
         
-    s = np.vectorize(sinc(x))
+    s = np.vectorize(sinc(x))       ### Should be np.vectorize(sinc). This is why your notebook and tests show failures.
     return (x,s)
 
 def gen_sinf_list(a, b, n=1000):
@@ -180,7 +180,7 @@ def gen_sinf_array(a, b, n=1000):
             return 1
         else:
             return (np.sin(1/x))
-    f = np.vectorize(sinf(x))
+    f = np.vectorize(sinf(x))      ### Should be np.vectorize(sinf). This is why your notebook and tests show failures.
     return (x, f)
 
 
